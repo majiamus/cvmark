@@ -3,14 +3,14 @@
 //
 // SPDX-License-Identifier: MIT
 
-import * as SVG from "svg.js";
+import type * as SVG from "svg.js";
 import "svg.select.js";
 
 import consts from "../consts/consts";
-import { PolyEditData, Geometry, Configuration } from "../core/canvasModel";
-import { translateFromSVG, pointsToNumberArray } from "../utils/shared";
+import type { Configuration, Geometry, PolyEditData } from "../core/canvasModel";
+import { pointsToNumberArray, translateFromSVG } from "../utils/shared";
 
-import { AutoborderHandler } from "./autoborderHandler";
+import type { AutoborderHandler } from "./autoborderHandler";
 
 /**
  * 编辑处理器接口

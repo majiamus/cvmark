@@ -9,66 +9,69 @@ import "svg.draggable.js";
 import "svg.resize.js";
 import "svg.select.js";
 import consts from "../consts/consts";
-import { Listener, Master } from "../events/master";
-import { AutoborderHandler, AutoborderHandlerImpl } from "../handlers/autoborderHandler";
-import { DrawHandler, DrawHandlerImpl } from "../handlers/drawHandler";
-import { EditHandler, EditHandlerImpl } from "../handlers/editHandler";
-import { GroupHandler, GroupHandlerImpl } from "../handlers/groupHandler";
+import type { Listener, Master } from "../events/master";
 import {
-  InteractionHandler,
+  type AutoborderHandler,
+  AutoborderHandlerImpl,
+} from "../handlers/autoborderHandler";
+import { type DrawHandler, DrawHandlerImpl } from "../handlers/drawHandler";
+import { type EditHandler, EditHandlerImpl } from "../handlers/editHandler";
+import { type GroupHandler, GroupHandlerImpl } from "../handlers/groupHandler";
+import {
+  type InteractionHandler,
   InteractionHandlerImpl,
 } from "../handlers/interactionHandler";
-import { MasksHandler, MasksHandlerImpl } from "../handlers/masksHandler";
-import { MergeHandler, MergeHandlerImpl } from "../handlers/mergeHandler";
-import { SliceHandler, SliceHandlerImpl } from "../handlers/sliceHandler";
-import { SplitHandler, SplitHandlerImpl } from "../handlers/splitHandler";
-import { ZoomHandler, ZoomHandlerImpl } from "../handlers/zoomHandler";
-import { ObjectSelector, ObjectSelectorImpl } from "../selector/objectSelector";
-import { RegionSelector, RegionSelectorImpl } from "../selector/regionSelector";
+import { type MasksHandler, MasksHandlerImpl } from "../handlers/masksHandler";
+import { type MergeHandler, MergeHandlerImpl } from "../handlers/mergeHandler";
+import { type SliceHandler, SliceHandlerImpl } from "../handlers/sliceHandler";
+import { type SplitHandler, SplitHandlerImpl } from "../handlers/splitHandler";
+import { type ZoomHandler, ZoomHandlerImpl } from "../handlers/zoomHandler";
+import { type ObjectSelector, ObjectSelectorImpl } from "../selector/objectSelector";
+import { type RegionSelector, RegionSelectorImpl } from "../selector/regionSelector";
 import {
-  translateToSVG,
+  clamp,
+  composeShapeDimensions,
+  type DrawnState,
+  displayShapeSize,
+  expandChannels,
+  getRoundedRotation,
+  imageDataToDataURL,
+  makeSVGFromTemplate,
+  parsePoints,
+  pointsToNumberArray,
+  readPointsFromShape,
+  type ShapeSizeElement,
+  scalarProduct,
+  setupSkeletonEdges,
+  stringifyPoints,
+  translateFromCanvas,
   translateFromSVG,
   translateToCanvas,
-  translateFromCanvas,
-  pointsToNumberArray,
-  parsePoints,
-  displayShapeSize,
-  scalarProduct,
+  translateToSVG,
   vectorLength,
-  ShapeSizeElement,
-  DrawnState,
-  readPointsFromShape,
-  setupSkeletonEdges,
-  makeSVGFromTemplate,
-  imageDataToDataURL,
-  expandChannels,
-  stringifyPoints,
   zipChannels,
-  composeShapeDimensions,
-  getRoundedRotation,
-  clamp,
 } from "../utils/shared";
 
-import { CanvasController } from "./canvasController";
+import type { CanvasController } from "./canvasController";
 import {
-  CanvasModel,
-  Mode,
-  Configuration,
-  Geometry,
-  UpdateReasons,
-  ActiveElement,
-  HighlightedElements,
-  FrameZoom,
-  DrawData,
-  CanvasHint,
-  InteractionResult,
+  type ActiveElement,
+  type CanvasHint,
+  type CanvasModel,
   ColorBy,
+  type Configuration,
+  type DrawData,
+  FrameZoom,
+  type Geometry,
+  type GroupData,
+  type HighlightedElements,
   HighlightSeverity,
-  InteractionData,
-  MergeData,
-  SplitData,
-  GroupData,
-  JoinData,
+  type InteractionData,
+  type InteractionResult,
+  type JoinData,
+  type MergeData,
+  Mode,
+  type SplitData,
+  UpdateReasons,
 } from "./canvasModel";
 
 /**
@@ -1639,7 +1642,7 @@ export class CanvasViewImpl implements CanvasView, Listener {
     if (data) {
       const { clientID, elements } = data as any;
       // 获取点坐标，优先使用data.points，否则从元素中提取
-      const points = data.points || elements.map((el: any) => el.points).flat();
+      const points = data.points || elements.flatMap((el: any) => el.points);
 
       // 如果有clientID，表示这是编辑现有对象
       if (typeof clientID === "number") {

@@ -3,8 +3,8 @@
 //
 // SPDX-License-Identifier: MIT
 
-import { GroupData } from "../core/canvasModel";
-import { ObjectSelector, SelectionFilter } from "../selector/objectSelector";
+import type { GroupData } from "../core/canvasModel";
+import type { ObjectSelector, SelectionFilter } from "../selector/objectSelector";
 
 /**
  * 分组处理器接口，定义了形状分组操作的基本方法

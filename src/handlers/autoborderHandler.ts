@@ -2,10 +2,10 @@
 //
 // SPDX-License-Identifier: MIT
 
-import * as SVG from "svg.js";
+import type * as SVG from "svg.js";
 
 import consts from "../consts/consts";
-import { Configuration, Geometry } from "../core/canvasModel";
+import type { Configuration, Geometry } from "../core/canvasModel";
 
 /**
  * 表示转换后的形状，包含点坐标和颜色信息

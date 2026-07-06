@@ -1,11 +1,12 @@
 {
   "name": "cvmark",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
   "description": "a graphic annotation editor based on SVG and Canvas",
   "main": "src/core/canvas.ts",
   "scripts": {
-    "eslint": "eslint --ext .ts src/"
+    "lint": "biome lint src/",
+    "format": "biome format --write src/"
   },
   "keywords": [
     "cvmark",
@@ -44,21 +45,11 @@
     "svg.select.js": "^3.0.1"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.4.1",
+    "@biomejs/biome": "^2.5.2",
     "@types/fabric": "^4.5.7",
     "@types/lodash": "^4.17.20",
     "@types/polylabel": "^1.0.5",
-    "@typescript-eslint/eslint-plugin": "^8.46.4",
-    "@typescript-eslint/parser": "^8.46.4",
-    "eslint": "^9.39.1",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-import-resolver-typescript": "^4.4.4",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-prettier": "^5.5.4",
-    "lodash": "^4.17.21",
-    "prettier": "^3.6.2",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.4"
+    "typescript": "^5.9.3"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

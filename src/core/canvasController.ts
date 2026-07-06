@@ -1,21 +1,21 @@
-import {
-  CanvasModel,
-  Mode,
-  Geometry,
-  Position,
+import type {
   ActiveElement,
-  MasksEditData,
-  PolyEditData,
+  CanvasModel,
   Configuration,
+  DrawData,
   FocusData,
+  Geometry,
+  GroupData,
   HighlightedElements,
   InteractionData,
-  DrawData,
-  MergeData,
-  SplitData,
-  GroupData,
   JoinData,
+  MasksEditData,
+  MergeData,
+  Mode,
+  PolyEditData,
+  Position,
   SliceData,
+  SplitData,
 } from "./canvasModel";
 
 /**

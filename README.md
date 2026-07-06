@@ -12,10 +12,16 @@ npm install cvmark
 
 ## 开发
 
-代码检查：
+代码检查（使用 Biome）：
 
 ```bash
-npm run eslint
+npm run lint
+```
+
+代码格式化：
+
+```bash
+npm run format
 ```
 
 ## API 方法

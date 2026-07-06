@@ -1,19 +1,19 @@
-import * as SVG from "svg.js";
+import type * as SVG from "svg.js";
 
 import consts from "../consts/consts";
-import { Geometry, SliceData, Configuration, CanvasHint } from "../core/canvasModel";
-import { ObjectSelector } from "../selector/objectSelector";
+import type { CanvasHint, Configuration, Geometry, SliceData } from "../core/canvasModel";
+import type { ObjectSelector } from "../selector/objectSelector";
 import {
-  stringifyPoints,
-  translateToCanvas,
-  translateFromCanvas,
-  translateToSVG,
-  findIntersection,
-  zipChannels,
-  Segment,
   findClosestPointOnSegment,
+  findIntersection,
+  type Segment,
   segmentsFromPoints,
+  stringifyPoints,
   toReversed,
+  translateFromCanvas,
+  translateToCanvas,
+  translateToSVG,
+  zipChannels,
 } from "../utils/shared";
 
 /**

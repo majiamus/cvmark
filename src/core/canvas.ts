@@ -1,28 +1,28 @@
-import { Master } from "../events/master";
+import type { Master } from "../events/master";
 
-import { CanvasController, CanvasControllerImpl } from "./canvasController";
+import { type CanvasController, CanvasControllerImpl } from "./canvasController";
 import {
-  CanvasModel,
+  type CanvasHint as _CanvasHint,
+  type FrameData as _FrameData,
+  type HighlightSeverity as _HighlightSeverity,
+  type InteractionData as _InteractionData,
+  type InteractionResult as _InteractionResult,
+  type CanvasModel,
   CanvasModelImpl,
-  Configuration,
-  FrameData as _FrameData,
-  RectDrawingMethod,
+  type Configuration,
+  type DrawData,
+  type Geometry,
+  type GroupData,
+  type JoinData,
+  type MasksEditData,
+  type MergeData,
   Mode,
-  CanvasHint as _CanvasHint,
-  InteractionData as _InteractionData,
-  InteractionResult as _InteractionResult,
-  HighlightSeverity as _HighlightSeverity,
-  DrawData,
-  MergeData,
-  SplitData,
-  GroupData,
-  JoinData,
-  SliceData,
-  MasksEditData,
-  PolyEditData,
-  Geometry,
+  type PolyEditData,
+  RectDrawingMethod,
+  type SliceData,
+  type SplitData,
 } from "./canvasModel";
-import { CanvasView, CanvasViewImpl } from "./canvasView";
+import { type CanvasView, CanvasViewImpl } from "./canvasView";
 import "../styles/canvas.scss";
 
 /**
@@ -476,4 +476,4 @@ export type InteractionResult = _InteractionResult;
 export type HighlightSeverity = _HighlightSeverity;
 export type FrameData = _FrameData;
 
-export { CanvasImpl as Canvas, RectDrawingMethod, Mode as CanvasMode };
+export { CanvasImpl as Canvas, Mode as CanvasMode, RectDrawingMethod };

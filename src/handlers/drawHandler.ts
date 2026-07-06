@@ -3,38 +3,38 @@
 //
 // SPDX-License-Identifier: MIT
 
-import * as SVG from "svg.js";
+import type * as SVG from "svg.js";
 
 import "svg.draw.js";
 
 import Crosshair from "../componets/crosshair";
 import consts from "../consts/consts";
 import {
-  DrawData,
-  Geometry,
+  type Configuration,
+  type DrawData,
+  type Geometry,
   RectDrawingMethod,
-  Configuration,
 } from "../core/canvasModel";
 import {
-  translateToSVG,
-  displayShapeSize,
-  ShapeSizeElement,
-  stringifyPoints,
-  BBox,
-  Box,
-  Point,
-  readPointsFromShape,
+  type BBox,
+  type Box,
   clamp,
-  translateToCanvas,
   computeWrappingBox,
-  makeSVGFromTemplate,
-  setupSkeletonEdges,
-  translateFromCanvas,
+  displayShapeSize,
   intersection,
+  makeSVGFromTemplate,
+  type Point,
+  readPointsFromShape,
+  type ShapeSizeElement,
+  setupSkeletonEdges,
+  stringifyPoints,
+  translateFromCanvas,
+  translateToCanvas,
+  translateToSVG,
 } from "../utils/shared";
 import { CIRCLE_STROKE } from "../utils/svg.patch";
 
-import { AutoborderHandler } from "./autoborderHandler";
+import type { AutoborderHandler } from "./autoborderHandler";
 
 /**
  * 绘制处理器接口，定义了绘制形状的基本操作

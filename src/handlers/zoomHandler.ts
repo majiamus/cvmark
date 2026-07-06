@@ -1,7 +1,7 @@
-import * as SVG from "svg.js";
+import type * as SVG from "svg.js";
 
 import consts from "../consts/consts";
-import { Geometry } from "../core/canvasModel";
+import type { Geometry } from "../core/canvasModel";
 import { translateToSVG } from "../utils/shared";
 
 /**

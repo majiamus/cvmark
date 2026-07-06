@@ -3,9 +3,9 @@
 //
 // SPDX-License-Identifier: MIT
 
-import * as SVG from "svg.js";
+import type * as SVG from "svg.js";
 
-import { SplitData } from "../core/canvasModel";
+import type { SplitData } from "../core/canvasModel";
 
 /**
  * 分割处理器接口，定义了形状分割的基本操作

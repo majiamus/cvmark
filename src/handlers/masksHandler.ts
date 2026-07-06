@@ -7,23 +7,23 @@ import debounce from "lodash/debounce";
 
 import consts from "../consts/consts";
 import {
-  DrawData,
-  MasksEditData,
-  Geometry,
-  Configuration,
-  BrushTool,
+  type BrushTool,
   ColorBy,
-  Position,
+  type Configuration,
+  type DrawData,
+  type Geometry,
+  type MasksEditData,
+  type Position,
 } from "../core/canvasModel";
 import {
-  PropType,
   computeWrappingBox,
-  zipChannels,
   expandChannels,
   imageDataToDataURL,
+  type PropType,
+  zipChannels,
 } from "../utils/shared";
 
-import { DrawHandler } from "./drawHandler";
+import type { DrawHandler } from "./drawHandler";
 
 /**
  * 包围盒接口，用于定义矩形区域的边界

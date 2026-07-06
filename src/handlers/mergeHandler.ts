@@ -3,9 +3,9 @@
 //
 // SPDX-License-Identifier: MIT
 
-import * as SVG from "svg.js";
+import type * as SVG from "svg.js";
 
-import { MergeData } from "../core/canvasModel";
+import type { MergeData } from "../core/canvasModel";
 
 /**
  * 合并处理器接口，定义处理形状合并操作的方法

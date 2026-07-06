@@ -3,23 +3,23 @@
 //
 // SPDX-License-Identifier: MIT
 
-import * as SVG from "svg.js";
+import type * as SVG from "svg.js";
 
 import Crosshair from "../componets/crosshair";
 import consts from "../consts/consts";
-import {
+import type {
+  Configuration,
+  Geometry,
   InteractionData,
   InteractionResult,
-  Geometry,
-  Configuration,
 } from "../core/canvasModel";
 import {
-  translateToSVG,
-  PropType,
-  stringifyPoints,
-  translateToCanvas,
   expandChannels,
   imageDataToDataURL,
+  type PropType,
+  stringifyPoints,
+  translateToCanvas,
+  translateToSVG,
 } from "../utils/shared";
 
 /**

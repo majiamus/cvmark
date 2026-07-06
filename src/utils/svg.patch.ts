@@ -9,7 +9,7 @@ import "svg.draw.js"; // 为SVG元素添加绘制功能，允许用户通过鼠�
 const originalDraw = SVG.Element.prototype.draw;
 
 // 重写SVG.Element原型上的draw方法，增强其功能
-SVG.Element.prototype.draw = function constructor(...args: any): any {
+SVG.Element.prototype.draw = function drawHandler(...args: any): any {
   // 尝试获取已存在的绘制处理器
   let handler = this.remember("_paintHandler");
 
@@ -160,7 +160,7 @@ SVG.Element.prototype.draw.extend(
 const originalDraggable = SVG.Element.prototype.draggable;
 
 // 重写SVG.Element原型上的draggable方法，增强其拖拽功能
-SVG.Element.prototype.draggable = function constructor(...args: any): any {
+SVG.Element.prototype.draggable = function draggableHandler(...args: any): any {
   // 尝试获取已存在的拖拽处理器
   let handler = this.remember("_draggable");
 
@@ -199,7 +199,7 @@ for (const key of Object.keys(originalDraggable)) {
 const originalResize = SVG.Element.prototype.resize;
 
 // 重写SVG.Element原型上的resize方法，增强其调整大小功能
-SVG.Element.prototype.resize = function constructor(...args: any): any {
+SVG.Element.prototype.resize = function resizeHandler(...args: any): any {
   // 尝试获取已存在的调整大小处理器
   let handler = this.remember("_resizeHandler");
 
