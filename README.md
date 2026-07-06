@@ -4,19 +4,13 @@
 
 CVMARK 是一个基于 TypeScript 开发的图形标注编辑器模块，使用 SVG 和 Canvas 技术实现。它提供了一个功能丰富的画布，用于查看、绘制和编辑标注。
 
-## 构建命令
-
-从源代码构建模块到 `dist` 目录：
+## 安装
 
 ```bash
-npm run build
+npm install cvmark
 ```
 
-开发模式构建（不进行代码压缩）：
-
-```bash
-npm run build --mode=development
-```
+## 开发
 
 代码检查：
 
@@ -100,35 +94,24 @@ npm run eslint
 
 ## Web 使用示例
 
-```js
-// 创建画布实例
-const canvas = new window.canvas.Canvas();
+```ts
+import { Canvas, RectDrawingMethod, CanvasMode } from 'cvmark';
 
-console.log("版本 ", window.canvas.CanvasVersion);
-console.log("当前模式是 ", window.canvas.mode());
+const canvas = new Canvas();
 
 // 将画布添加到 HTML 容器
-htmlContainer.appendChild(canvas.html());
+container.appendChild(canvas.html());
 canvas.fitCanvas();
 
-// 接下来可以使用其 API 方法，例如：
+// 使用 API
 canvas.rotate(270);
 canvas.draw({
   enabled: true,
-  shapeType: "rectangle",
+  shapeType: 'rectangle',
   crosshair: true,
-  rectDrawingMethod: window.canvas.RectDrawingMethod.CLASSIC,
+  rectDrawingMethod: RectDrawingMethod.CLASSIC,
 });
 ```
-
-## 构建输出
-
-构建后，会在 `dist` 目录下生成以下文件：
-
-- `cvat-canvas.[contenthash].js` - 打包后的 JavaScript 文件
-- `cvat-canvas.[contenthash].js.map` - 源映射文件
-- `cvat-canvas.[contenthash].js.LICENSE.txt` - 许可证文件
-- `declaration/src/cvat-canvas.d.ts` - TypeScript 声明文件
 
 ## 依赖项
 

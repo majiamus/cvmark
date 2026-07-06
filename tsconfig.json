@@ -30,16 +30,9 @@
     "esModuleInterop": true,
     // 只进行类型检查，不生成编译产物，通常与 Babel/SWC 配合，由打包工具处理代码转换
     "noEmit": true,
-    // 生成对应的声明文件（.d.ts），便于其他 TypeScript 项目引用该库时获取类型信息
-    "declaration": true,
-    // 声明文件输出目录，避免与编译后的 JavaScript 文件混淆
-    "declarationDir": "dist/declaration",
-    // 自定义模块路径映射，简化导入路径
-    "paths": {
-      "cvat-canvas.node": ["dist/cvat-canvas.node"]
-    },
+
     // 设置模块解析的基准目录为项目根目录
     "baseUrl": "."
   },
-  "include": ["src/core/canvas.ts"]
+  "include": ["src/**/*.ts"]
 }
